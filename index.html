@@ -1,0 +1,106 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #212121;
+            text-align: center;
+        }
+
+        .layout input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .layout input:checked ~ .mark {
+            background-color: black;
+            opacity: .6;
+        }
+
+        .mark {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            padding: 50px 50px 50px 50px;
+            margin: -108px 0px 0px -50px;
+            display: inline-block;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 50px;
+            text-align: center;
+            color: black;
+        } 
+
+        .layout {
+            padding: 50px 50px 50px 50px;
+            margin: 25px 25px 25px 25px;
+            display: inline-block;
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .layout label {
+            display: inline-block;
+        }
+
+        .one {
+            background-color: rgb(255,0,0);
+        }
+        .two {
+            background-color: rgb(255, 192, 0);
+        }
+        .three {
+            background-color: rgb(0,176,80);
+        }
+        .four {
+            background-color: rgb(0,176,240)
+        }
+
+        .words {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+            display: block;
+            word-wrap: none;
+        }
+
+        .side {
+            display: inline-block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form id="simpleSurvey" class="gform" method="POST" action="https://script.google.com/macros/s/AKfycbxi4x85huefZ5ffaTBMigYZToriXweL37OR5Q4sltOr7m8dKDs/exec">
+        <!--Are these really just gonna be radio buttons?-->
+        <!--Submit the form on whichever answer is chosen second-->
+        <!--Better implemented with django or flask???-->
+        <!--Radio button on click, change shade-->
+        <h1 style="color: white; font-family: sans-serif;">How much did you care about the topic before the program?</h1>
+        <div class="answer">
+            <div class="side"><label class="layout one">1 <input type="radio" name="effort" value="1"><span class="mark"></span></label><div class="words">None</div></div>
+            <div class="side"><label class="layout two">2<input type="radio" name="effort" value="2"><span class="mark"></span></label><div class="words">Some</div></div>
+            <div class="side"><label class="layout three">3<input type="radio" name="effort" value="3"><span class="mark"></span></label><div class="words">Lots</div></div>
+            <div class="side"><label class="layout four">4<input type="radio" name="effort" value="4"><span class="mark"></span></label><div class="words">Gobs</div></div>
+        </div>
+
+        <br>
+        <h1 style="color: white; font-family: sans-serif;">How much did you get out of the program?</h1>
+        <div class="answer">
+            <div class="side"><label class="layout one">1 <input type="radio" name="PCE" value="1"><span class="mark"></span></label><div class="words">None</div></div>
+            <div class="side"><label class="layout two">2<input type="radio" name="PCE" value="2"><span class="mark"></span></label><div class="words">Some</div></div>
+            <div class="side"><label class="layout three">3<input type="radio" name="PCE" value="3"><span class="mark"></span></label><div class="words">Lots</div></div>
+            <div class="side"><label class="layout four">4<input type="radio" name="PCE" value="4"><span class="mark"></span></label><div class="words">Gobs</div></div>
+        </div>
+        <div><button type="submit" id="submit-form">Submit</button></div>
+    </form>
+</body>
+
+</html>
